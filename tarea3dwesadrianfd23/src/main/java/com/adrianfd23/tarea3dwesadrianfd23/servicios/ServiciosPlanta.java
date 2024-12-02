@@ -9,7 +9,8 @@ import com.adrianfd23.tarea3dwesadrianfd23.repository.PlantaRepository;
 @Service
 public class ServiciosPlanta {
 	
-@Autowired PlantaRepository plrepo;
+@Autowired PlantaRepository plantarepo;
+@Autowired ServiciosEjemplares servejemplar;
 
 	public boolean validarPlanta(Planta p) {
 		return true;
@@ -17,7 +18,7 @@ public class ServiciosPlanta {
 	}
 
 	public void insertarPlanta(Planta p) {
-		 plrepo.saveAndFlush(p);
+		plantarepo.save(p);
 		
 	}
 
