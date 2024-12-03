@@ -9,17 +9,23 @@ import com.adrianfd23.tarea3dwesadrianfd23.repository.PlantaRepository;
 @Service
 public class ServiciosPlanta {
 	
-@Autowired PlantaRepository plantarepo;
-@Autowired ServiciosEjemplares servejemplar;
+@Autowired 
+private PlantaRepository plantarepo;
+
+	public void insertarPlanta(Planta p) {
+		plantarepo.saveAndFlush(p);
+	
+	}
 
 	public boolean validarPlanta(Planta p) {
+		
+		//if(plantarepo.existeCodigo(p)) {
+			//return false;
+		//}
 		return true;
 		
 	}
 
-	public void insertarPlanta(Planta p) {
-		plantarepo.save(p);
-		
-	}
+	
 
 }
