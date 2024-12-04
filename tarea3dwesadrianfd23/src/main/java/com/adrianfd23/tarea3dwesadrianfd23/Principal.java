@@ -42,8 +42,19 @@ public class Principal implements CommandLineRunner {
 		p1.setNombrecomun("Margarita");
 		p1.setNombrecientifico("Margarita común");
 		
+		if(!servplant.validarPlanta(p1))
+			System.out.println("El codigo ya existe");
 		
+		Ejemplar ej1 = new Ejemplar();
+		ej1.setNombre(nombre);
+		ej1.setPlanta(p1);
+		p1.getEjemplares().add(ej1);
 		
+		servplant.insertarPlanta(p1);
+		
+		String nombreejemplar = p1.getNombrecomun().toUpperCase()+"_"+ servejemplar.actualizarNombreEjemplar(null, nombre);
+		ej1.setNombre(nombreejemplar);
+		servejemplar.actualizar(ej1);
 		
 		
 		
